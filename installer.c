@@ -1,3 +1,6 @@
+// installer.c
+// Orange Pi 5 Plus Cross-Platform Installer
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -347,7 +350,7 @@ int compile_kernel_builder(installer_config_t *config) {
     log_message("INFO", "Compiling Orange Pi Kernel Builder...");
     
     // Construct paths
-    snprintf(source_file, sizeof(source_file), "%s/orangepi_kernel_builder.c", config->source_dir);
+    snprintf(source_file, sizeof(source_file), "%s/builder.c", config->source_dir);
     snprintf(binary_file, sizeof(binary_file), "%s/%s", config->source_dir, KERNEL_BUILDER_NAME);
     
     // Check if source file exists
@@ -827,7 +830,7 @@ error:
     printf("  • Verify your internet connection for package downloads\n");
     printf("  • Check that you have sufficient disk space (>1GB)\n");
     printf("  • Try running with --force flag to skip some checks\n");
-    printf("  • Ensure the source file orangepi_kernel_builder.c exists\n");
+    printf("  • Ensure the source file builder.c exists\n");
     
     if (log_fp) {
         fclose(log_fp);
