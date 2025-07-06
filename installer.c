@@ -1,7 +1,6 @@
 // installer.c
 // Orange Pi 5 Plus Cross-Platform Installer
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
