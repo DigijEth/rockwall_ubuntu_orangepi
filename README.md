@@ -44,7 +44,7 @@ A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Pl
 ### Quick Installation (Recommended - C-based cross-platform)
 ```bash
 # Clone the repository
-git clone https://github.com/your-repo/orangepi-kernel-builder.git
+git clone https://github.com/digijeth/orangepi-kernel-builder.git
 cd orangepi-kernel-builder
 
 # Build the installer
