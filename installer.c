@@ -1,7 +1,5 @@
 // installer.c
 // Orange Pi 5 Plus Cross-Platform Installer
-//
-// This file should be saved as: installer.c
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +13,7 @@
 
 #define VERSION "1.0.0"
 #define INSTALLER_NAME "installer"
-#define KERNEL_BUILDER_NAME "orangepi-kernel-builder"
+#define KERNEL_BUILDER_NAME "builder"
 #define MAX_CMD_LEN 2048
 #define MAX_PATH_LEN 512
 #define MAX_LINE_LEN 1024
