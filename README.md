@@ -44,7 +44,7 @@ A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Pl
 ### Quick Installation (Recommended - C-based cross-platform)
 ```bash
 # Clone the repository
-git clone https://github.com/digijeth/orangepi-kernel-builder.git
+git clone https://github.com/your-repo/orangepi-kernel-builder.git
 cd orangepi-kernel-builder
 
 # Build the installer
@@ -102,25 +102,25 @@ sudo orangepi-kernel-builder --no-install
 ### GPU-Specific Options
 ```bash
 # Build with all GPU features (default)
-sudo orangepi-kernel-builder --enable-gpu --enable-opencl --enable-vulkan
+sudo builder --enable-gpu --enable-opencl --enable-vulkan
 
 # Build without GPU support
-sudo orangepi-kernel-builder --disable-gpu
+sudo builder --disable-gpu
 
 # Build with OpenCL only
-sudo orangepi-kernel-builder --disable-vulkan --enable-opencl
+sudo builder --disable-vulkan --enable-opencl
 
 # Verify GPU installation after build
-sudo orangepi-kernel-builder --verify-gpu
+sudo builder --verify-gpu
 ```
 
 ### Convenient Aliases
 After installation, these aliases are available:
 ```bash
-opi-build          # sudo orangepi-kernel-builder
-opi-build-clean    # sudo orangepi-kernel-builder --clean
-opi-build-quick    # sudo orangepi-kernel-builder --no-install
-opi-build-nogpu    # sudo orangepi-kernel-builder --disable-gpu
+opi-build          # sudo builder
+opi-build-clean    # sudo builder --clean
+opi-build-quick    # sudo builder --no-install
+opi-build-nogpu    # sudo builder --disable-gpu
 ```
 
 ## ⚙️ Command Line Options
