@@ -1,0 +1,66 @@
+# Diagnostic Makefile - Use this to test if basic Makefile works
+run: make -f Makefile.test check
+
+CC = gcc
+CFLAGS = -Wall -Wextra -O2 -std=c99
+SOURCE = builder.c
+INSTALLER_SOURCE = installer.c
+TARGET = orangepi-kernel-builder
+INSTALLER = installer
+
+# Check what files exist and what the Makefile is looking for
+check:
+	@echo "=== DIAGNOSTIC CHECK ==="
+	@echo "Current directory contents:"
+	@ls -la
+	@echo ""
+	@echo "Looking for these files:"
+	@echo "  SOURCE: $(SOURCE)"
+	@echo "  INSTALLER_SOURCE: $(INSTALLER_SOURCE)"
+	@echo ""
+	@echo "File existence check:"
+	@if [ -f "$(SOURCE)" ]; then echo "✓ $(SOURCE) exists"; else echo "✗ $(SOURCE) MISSING"; fi
+	@if [ -f "$(INSTALLER_SOURCE)" ]; then echo "✓ $(INSTALLER_SOURCE) exists"; else echo "✗ $(INSTALLER_SOURCE) MISSING"; fi
+	@if [ -f "Makefile" ]; then echo "✓ Makefile exists"; else echo "✗ Makefile MISSING"; fi
+	@echo ""
+	@echo "Makefile variables:"
+	@echo "  CC = $(CC)"
+	@echo "  CFLAGS = $(CFLAGS)"
+	@echo "  TARGET = $(TARGET)"
+	@echo "  INSTALLER = $(INSTALLER)"
+
+# Test compilation without actually building
+test-compile:
+	@echo "=== TESTING COMPILATION ==="
+	@if [ -f "$(SOURCE)" ]; then \
+		echo "Testing $(SOURCE) compilation..."; \
+		$(CC) -c $(CFLAGS) $(SOURCE) -o /tmp/test_builder.o && echo "✓ $(SOURCE) compiles OK" || echo "✗ $(SOURCE) compilation FAILED"; \
+		rm -f /tmp/test_builder.o; \
+	else \
+		echo "✗ Cannot test $(SOURCE) - file missing"; \
+	fi
+	@if [ -f "$(INSTALLER_SOURCE)" ]; then \
+		echo "Testing $(INSTALLER_SOURCE) compilation..."; \
+		$(CC) -c $(CFLAGS) $(INSTALLER_SOURCE) -o /tmp/test_installer.o && echo "✓ $(INSTALLER_SOURCE) compiles OK" || echo "✗ $(INSTALLER_SOURCE) compilation FAILED"; \
+		rm -f /tmp/test_installer.o; \
+	else \
+		echo "✗ Cannot test $(INSTALLER_SOURCE) - file missing"; \
+	fi
+
+# Show make version and capabilities
+make-info:
+	@echo "=== MAKE INFORMATION ==="
+	@echo "Make version:"
+	@make --version | head -1
+	@echo ""
+	@echo "Default shell:"
+	@echo "SHELL = $(SHELL)"
+	@echo ""
+	@echo "Available targets in main Makefile:"
+	@if [ -f "Makefile" ]; then \
+		grep "^[a-zA-Z][a-zA-Z0-9_-]*:" Makefile | head -10; \
+	else \
+		echo "No main Makefile found"; \
+	fi
+
+.PHONY: check test-compile make-info
