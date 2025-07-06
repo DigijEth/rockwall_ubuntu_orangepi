@@ -1,4 +1,4 @@
-# Rockwall Ubuntu for the Orange Pi 5 Plus -- Kernel Builder
+# Orange Pi 5 Plus Kernel Builder
 
 A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Plus with RK3588 SoC and Mali G610 GPU hardware acceleration support.
 
@@ -41,35 +41,46 @@ A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Pl
 
 ## 🛠️ Installation
 
-### Quick Installation (Recommended)
+### Quick Installation (Recommended - C-based cross-platform)
 ```bash
 # Clone the repository
 git clone https://github.com/your-repo/orangepi-kernel-builder.git
 cd orangepi-kernel-builder
 
-# Run the installation script
-chmod +x install.sh
-./install.sh
+# Build the installer
+make orangepi-installer
+
+# Run the cross-platform installer
+sudo ./orangepi-installer
 ```
 
-### Manual Installation
+### Alternative Installation Methods
 ```bash
-# Build the tool
+# Build both tools and install
+make build-all install
+
+# Install with custom options
+make build-all
+sudo ./orangepi-installer --verbose --skip-desktop
+
+# Manual installation (minimal)
 make
-
-# Install system-wide
-make install
-
-# Or install manually
 sudo make install-manual
 ```
 
-### Debian Package Installation
+### From Debian Package
 ```bash
 # Create and install .deb package
 make deb
 sudo dpkg -i orangepi-kernel-builder_1.0.0_arm64.deb
 ```
+
+### Cross-Platform Compatibility
+The installer is written in C and supports:
+- **Linux Distributions**: Ubuntu, Debian, CentOS, RHEL, Fedora, Arch Linux, openSUSE
+- **Package Managers**: apt, yum, dnf, pacman, zypper
+- **Architectures**: x86_64 (cross-compilation), aarch64 (native)
+- **Installer Options**: `--verbose`, `--skip-desktop`, `--skip-shell`, `--force`
 
 ## 🏃 Quick Start
 
