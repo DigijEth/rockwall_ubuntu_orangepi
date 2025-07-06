@@ -1,6 +1,7 @@
 // installer.c
 // Orange Pi 5 Plus Cross-Platform Installer
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +13,7 @@
 #include <dirent.h>
 
 #define VERSION "1.0.0"
-#define INSTALLER_NAME "orangepi-installer"
+#define INSTALLER_NAME "installer"
 #define KERNEL_BUILDER_NAME "orangepi-kernel-builder"
 #define MAX_CMD_LEN 2048
 #define MAX_PATH_LEN 512
@@ -719,7 +720,7 @@ int main(int argc, char *argv[]) {
     }
     
     // Open log file
-    log_fp = fopen("/tmp/orangepi-installer.log", "a");
+    log_fp = fopen("/tmp/installer.log", "a");
     
     // Check root permissions
     if (check_root_permissions() != 0) {
@@ -825,7 +826,7 @@ error:
     log_message("ERROR", "Installation failed!");
     printf("\n%s%sInstallation Failed!%s\n", COLOR_BOLD, COLOR_RED, COLOR_RESET);
     printf("\n%s%sTroubleshooting:%s\n", COLOR_BOLD, COLOR_RED, COLOR_RESET);
-    printf("  • Check the installation log: /tmp/orangepi-installer.log\n");
+    printf("  • Check the installation log: /tmp/installer.log\n");
     printf("  • Ensure you have root privileges (run with sudo)\n");
     printf("  • Verify your internet connection for package downloads\n");
     printf("  • Check that you have sufficient disk space (>1GB)\n");
