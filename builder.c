@@ -1,3 +1,8 @@
+// builder.c
+// Orange Pi 5 Plus Linux Kernel Builder with Mali G610 GPU Support
+// 
+// This file should be saved as: builder.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
