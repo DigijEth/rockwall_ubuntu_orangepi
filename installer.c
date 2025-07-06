@@ -1,5 +1,7 @@
 // installer.c
 // Orange Pi 5 Plus Cross-Platform Installer
+//
+// This file should be saved as: installer.c
 
 #include <stdio.h>
 #include <stdlib.h>
