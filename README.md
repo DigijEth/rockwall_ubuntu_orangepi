@@ -1,7 +1,7 @@
 Just realized this was private. I have been really sick lately so it always seems like one step forward two steps backward. 
 
 
-# Orange Pi 5 Plus Kernel Builder
+# Orange Pi 5 Plus Builder
 
 A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Plus with RK3588 SoC and Mali G610 GPU hardware acceleration support.
 
