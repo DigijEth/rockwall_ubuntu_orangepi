@@ -1,4 +1,4 @@
-Major update coming in the next 24 hours, fully functinal with GUI system is on its way
+Just realized this was private. I have been really sick lately so it always seems like one step forward two steps backward. 
 
 
 # Orange Pi 5 Plus Kernel Builder
