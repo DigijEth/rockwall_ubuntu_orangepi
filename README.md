@@ -1,3 +1,6 @@
+Major update coming in the next 24 hours, fully functinal with GUI system is on its way
+
+
 # Orange Pi 5 Plus Kernel Builder
 
 A comprehensive tool for building optimized Linux kernels for the Orange Pi 5 Plus with RK3588 SoC and Mali G610 GPU hardware acceleration support.
